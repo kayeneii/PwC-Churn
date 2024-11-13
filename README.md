@@ -50,16 +50,16 @@ To derive answers to the following questions:
 ---
 The following tools were used in the creation of this report.
 1. **Microsoft Excel:** For data cleaning and preparation, initial exploration, and visualization.
- * Data Cleaning and Preparation:
-   - Data loading and inspection
-   -  Data cleaning
+  * Data Cleaning and Preparation:
+    - Data loading and inspection
+    -  Data cleaning
        
 2. **Microsoft Power BI:** For,
- * Further Data Processing:
-   - Data loading and quality inspection
-   -  Data transformation and formatting
+  * Further Data Processing:
+    - Data loading and quality inspection
+    -  Data transformation and formatting
 
- * Data Analysis: During the analysis, the following conditional columns were created in the Power Query:
+  * Data Analysis: During the analysis, the following conditional columns were created in the Power Query:
 
   = **Contract Count**
 	
@@ -69,7 +69,7 @@ The following tools were used in the creation of this report.
 	Else 0
 ```
 	
-  = **Loyalty**
+   = **Loyalty**
 	
 ```DAX 
 	= If tenure is less than 12 Then <1 Year
@@ -80,7 +80,7 @@ The following tools were used in the creation of this report.
 	Else <6 Years
 ```
 	
-  = **Internet Service Count**
+   = **Internet Service Count**
 
 ```DAX 
 	= If InternetService equals DSL Then 1
@@ -88,7 +88,7 @@ The following tools were used in the creation of this report.
 	Else 0
 ```
 
-  = **Payment Method Count**
+   = **Payment Method Count**
 	
 ```DAX 
 	= If PaymentMethod contains Electronic Then 1
@@ -97,14 +97,14 @@ The following tools were used in the creation of this report.
 	Else 0
 ```
 
-  = **Internet Service**
+   = **Internet Service**
 
 ```DAX
 	If InternetService does not contain No Then Yes
 	Else No
 ```
 
-  = **PaperlessBilling Count**
+   = **PaperlessBilling Count**
 	
 ```DAX
 	If PaperlessBilling equals Yes Then 1
@@ -263,7 +263,7 @@ Total PaperlessBilling = CALCULATE(COUNTA('Churn-Dataset'[PaperlessBilling]), 'C
 ```
 
 
-  * Data Visualizations: Cards, Bar, Pie and Donut Charts was used to visually plot out the subscription service rates,  customer account and demographic information, among other summarized data.
+   * Data Visualizations: Cards, Bar, Pie and Donut Charts was used to visually plot out the subscription service rates,  customer account and demographic information, among other summarized data.
 
 3. **GitHUb:** For,
    - Portfolio Building
@@ -273,7 +273,7 @@ Total PaperlessBilling = CALCULATE(COUNTA('Churn-Dataset'[PaperlessBilling]), 'C
 ### Findings and Recommendations
 ---
 1. **Findings:** Following the conclusive analysis of the Churn Dataset, the following findings were made:
-   * The percentage of customers that signed up for: 
+    * The percentage of customers that signed up for: 
           - Phone Services was 90.90%
           - Multiple Lines was 50.03%
           - Internet Services was  93.95%
@@ -283,19 +283,19 @@ Total PaperlessBilling = CALCULATE(COUNTA('Churn-Dataset'[PaperlessBilling]), 'C
           - Tech Support was 16.59%
           - Streaming TV was 43.55%
           - Streaming Movies was 43.77%
-   * 7% of the customers have been subscribed for less than 6 years, 15% for less than 5 years, 20% for less than 4 years, 22% for less than 3 years, 30% for less than 2 years, and 48% for less than a year.
-   * 3.88K are monthly contractors, while 1.7K two-year contractors and 1.47K are yearly contractors.
-   * More customers pay via 'Electronic Check'.
-   * 4,171 customers use paperless billing. 
-   * The overall monthly charge is 456.12K
-   * Total annual charge is 16 Million.
-   * Total number of tickets opened in:
+    * 7% of the customers have been subscribed for less than 6 years, 15% for less than 5 years, 20% for less than 4 years, 22% for less than 3 years, 30% for less than 2 years, and 48% for less than a year.
+    * 3.88K are monthly contractors, while 1.7K two-year contractors and 1.47K are yearly contractors.
+    * More customers pay via 'Electronic Check'.
+    * 4,171 customers use paperless billing. 
+    * The overall monthly charge is 456.12K
+    * Total annual charge is 16 Million.
+    * Total number of tickets opened in:
          - Administrative is 3,632
          - Technical is 2,955
-   * 49.5% of customers are female customers while 50.5% are male.
-   * Of the total 7,043 customers, 16.21% are Senior Citizens.
-   * 17.44% have dependents.
-   * 35.79% have partners.
+    * 49.5% of customers are female customers while 50.5% are male.
+    * Of the total 7,043 customers, 16.21% are Senior Citizens.
+    * 17.44% have dependents.
+    * 35.79% have partners.
 
 2. **Recommendations:**
    - Make subscription services more accessible and inclusive for the senior citizens.
