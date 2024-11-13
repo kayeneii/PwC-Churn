@@ -49,18 +49,17 @@ To derive answers to the following questions:
 ### Methods
 ---
 The following tools were used in the creation of this report.
-- **Microsoft Excel:** For data cleaning and preparation, initial exploration, and visualization.
-1. Data Cleaning and Preparation:
-     - Data loading and inspection
-     -  Data cleaning
+1. **Microsoft Excel:** For data cleaning and preparation, initial exploration, and visualization.
+ * Data Cleaning and Preparation:
+   - Data loading and inspection
+   -  Data cleaning
        
-- **Microsoft Power BI:** For,
-1. Further Data Processing:
-     - Data loading and quality inspection
-     -  Data transformation and formatting
+2. **Microsoft Power BI:** For,
+ * Further Data Processing:
+   - Data loading and quality inspection
+   -  Data transformation and formatting
 
-2. Data Analysis:
-During the analysis, the following conditional columns were created in the Power Query:
+ * Data Analysis: During the analysis, the following conditional columns were created in the Power Query:
 
   = **Contract Count**
 	
@@ -114,159 +113,159 @@ During the analysis, the following conditional columns were created in the Power
 
  
  Several measures were also derived:
-   * To get the percentage value of churns.
+   - To get the percentage value of churns.
 		
 ```DAX
 Churn Rate = DIVIDE(CALCULATE(COUNT('Churn-Dataset'[Churn]), 'Churn-Dataset'[Churn] = "Yes"), CALCULATE(COUNT('Churn-Dataset'[Churn]), ALLSELECTED('Churn-Dataset'[Churn])))
 ```
 
-  * To get total count of churn
+  - To get total count of churn
 		
 ```DAX
 Total Churn = CALCULATE(COUNTA('Churn-Dataset'[Churn]), 'Churn-Dataset'[Churn] = "Yes")
 ```
 
-  * To get total count of Device Protection
+  - To get total count of Device Protection
 		
 ```DAX
 Active Device Protection = CALCULATE(COUNTA('Churn-Dataset'[DeviceProtection]), 'Churn-Dataset'[DeviceProtection] ="Yes")
 ```	
 
-  * To get total count of Phone Service
+  - To get total count of Phone Service
 		
 ```DAX
 Active Phone Service = CALCULATE(COUNTA('Churn-Dataset'[PhoneService]), 'Churn-Dataset'[PhoneService] = "Yes")
 ```	
 
-  * To get total count of Online Security
+  - To get total count of Online Security
 	
 ```DAX
 Active Online Security = CALCULATE(COUNTA('Churn-Dataset'[OnlineSecurity]), 'Churn-Dataset'[OnlineSecurity] = "Yes")
 ```	
 	    
-  * To get total count of Online Backup
+  - To get total count of Online Backup
 	
 ```DAX
 Active Online Backup = CALCULATE(COUNTA('Churn-Dataset'[OnlineBackup]), 'Churn-Dataset'[OnlineBackup] = "Yes")
 ```
-  * To get total count of Multiple Lines
+  - To get total count of Multiple Lines
 		
 ```DAX
 Active Multiple Lines = CALCULATE(COUNTA('Churn-Dataset'[MultipleLines]), 'Churn-Dataset'[MultipleLines] = "Yes")
 ```	
 
-  * To get total count of Active Tech Support
+  - To get total count of Active Tech Support
 		
 ```DAX
 Active Tech Support = CALCULATE(COUNTA('Churn-Dataset'[TechSupport]), 'Churn-Dataset'[TechSupport] = "Yes")
 ```	
 
-  * To get total count of active StreamingTV
+  - To get total count of active StreamingTV
 		
 ```DAX
 Total StreamingTV = CALCULATE(COUNTA('Churn-Dataset'[StreamingTV]), 'Churn-Dataset'[StreamingTV] = "Yes")
 ```	
 
-  * To get total count of active StreamingMovies
+  - To get total count of active StreamingMovies
 	
 ```DAX
 Total StreamingMovies = CALCULATE(COUNTA('Churn-Dataset'[StreamingMovies]), 'Churn-Dataset'[StreamingMovies] = "Yes")
 ```	
 
-  * To get total count of PaperlessBilling
+  - To get total count of PaperlessBilling
 
 ```DAX
 Total PaperlessBilling = CALCULATE(COUNTA('Churn-Dataset'[PaperlessBilling]), 'Churn-Dataset'[PaperlessBilling] = "Yes")
 ```
 
-  * To get percentage value of Dependents
+  - To get percentage value of Dependents
 		
 ```DAX
 %Dependents = DIVIDE(CALCULATE(COUNT('Churn-Dataset'[Dependents]), 'Churn-Dataset'[Dependents] = "Yes", 'Churn-Dataset'[Churn] = "Yes"), CALCULATE(COUNT('Churn-Dataset'[Dependents]), 'Churn-Dataset'[Churn] = "Yes"), 0)
 ```	
 	    
-  * To get percentage value of Active Multiple Lines
+  - To get percentage value of Active Multiple Lines
 		
 ```DAX
 %Active Multiple Lines = DIVIDE(CALCULATE(COUNT('Churn-Dataset'[MultipleLines]), 'Churn-Dataset'[MultipleLines] = "Yes", 'Churn-Dataset'[Churn] = "Yes"), CALCULATE(COUNT('Churn-Dataset'[MultipleLines]), 'Churn-Dataset'[Churn] = "Yes", 'Churn-Dataset'[MultipleLines] <> "No phone service"), 0)
 ```	
 
-  * To get percentage value of No Multiple Lines
+  - To get percentage value of No Multiple Lines
 		
 ```DAX
 %No Multiple Lines = DIVIDE(CALCULATE(COUNT('Churn-Dataset'[MultipleLines]), 'Churn-Dataset'[MultipleLines] = "No", 'Churn-Dataset'[Churn] = "Yes"), CALCULATE(COUNT('Churn-Dataset'[MultipleLines]), 'Churn-Dataset'[Churn] = "Yes", 'Churn-Dataset'[MultipleLines] <> "No phone service"), 0)
 ```	
 
-  * To get percentage value of Active Device Protection
+  - To get percentage value of Active Device Protection
 		
 ```DAX
 %Active Device Protection = CALCULATE(COUNTA('Churn-Dataset'[DeviceProtection]), 'Churn-Dataset'[DeviceProtection] ="Yes")  / 7043
 ```
 	
-  * To get percentage value of Active Phone Service
+  - To get percentage value of Active Phone Service
 		
 ```DAX
 %Active Phone Service = DIVIDE(CALCULATE(COUNT('Churn-Dataset'[PhoneService]), 'Churn-Dataset'[PhoneService] = "Yes", 'Churn-Dataset'[Churn] = "Yes"), CALCULATE(COUNT('Churn-Dataset'[PhoneService]), 'Churn-Dataset'[Churn] = "Yes"), 0)
 ```	
 
-  * To get percentage value of Active Online Backup
+  - To get percentage value of Active Online Backup
 		
 ```DAX
 %Active Online Backup = DIVIDE(CALCULATE(COUNT('Churn-Dataset'[OnlineBackup]), 'Churn-Dataset'[OnlineBackup] = "Yes", 'Churn-Dataset'[Churn] = "Yes"), CALCULATE(COUNT('Churn-Dataset'[OnlineBackup]), 'Churn-Dataset'[Churn] = "Yes"), 0)
 ```
 
-  * To get percentage value of Active Online Security
+ - To get percentage value of Active Online Security
 		
 ```DAX
 %Active Online Security = DIVIDE(CALCULATE(COUNT('Churn-Dataset'[OnlineSecurity]), 'Churn-Dataset'[OnlineSecurity] = "Yes", 'Churn-Dataset'[Churn] = "Yes"), CALCULATE(COUNT('Churn-Dataset'[OnlineSecurity]), 'Churn-Dataset'[Churn] = "Yes"), 0)
 ```
 	
-  * To get percentage value of Active Tech Support
+  - To get percentage value of Active Tech Support
 		
 ```DAX
 %Active Tech Support = DIVIDE(CALCULATE(COUNT('Churn-Dataset'[TechSupport]), 'Churn-Dataset'[TechSupport] = "Yes", 'Churn-Dataset'[Churn] = "Yes"), CALCULATE(COUNT('Churn-Dataset'[TechSupport]), 'Churn-Dataset'[Churn] = "Yes"), 0)
 ```
 	
-  * To get percentage value of Active Streaming TV
+  - To get percentage value of Active Streaming TV
 	
 ```DAX
 %Active StreamingTV = DIVIDE(CALCULATE(COUNT('Churn-Dataset'[StreamingTV]), 'Churn-Dataset'[StreamingTV] = "Yes", 'Churn-Dataset'[Churn] = "Yes"), CALCULATE(COUNT('Churn-Dataset'[StreamingTV]), 'Churn-Dataset'[Churn] = "Yes"), 0)
 ```	
 	 
-  * To get percentage value of Active StreamingMovies
+  - To get percentage value of Active StreamingMovies
 	
 ```DAX
 %Active StreamingMovies = DIVIDE(CALCULATE(COUNT('Churn-Dataset'[StreamingMovies]), 'Churn-Dataset'[StreamingMovies] = "Yes", 'Churn-Dataset'[Churn] = "Yes"), CALCULATE(COUNT('Churn-Dataset'[StreamingMovies]), 'Churn-Dataset'[Churn] = "Yes"), 0)
 ```
 	
-  * To get percentage value of Active Internet Service
+  - To get percentage value of Active Internet Service
   	
 ```DAX
 %Active Internet Service = SUM(COUNT('Churn-Dataset'[InternetService]), 'Churn-Dataset'[InternetService] ="Yes")  / 7043
 ```
 
-  * To get percentage value with Partner
+  - To get percentage value with Partner
 	
 ```DAX
 %Partner = DIVIDE(CALCULATE(COUNT('Churn-Dataset'[Partner]), 'Churn-Dataset'[Partner] = "Yes", 'Churn-Dataset'[Churn] = "Yes"), CALCULATE(COUNT('Churn-Dataset'[Partner]),'Churn-Dataset'[Churn] = "Yes"), 0)
 ```	
 
-  * To get percentage value of Senior Citizens
+  - To get percentage value of Senior Citizens
 	
 ```DAX
 %Senior Citizens = SUM('Churn-Dataset'[SeniorCitizen]) / 7043
 ```	
 
-  * To get percentage value of Active Tech Support
+  - To get percentage value of Active Tech Support
 		
 ```DAX
 %Active Tech Support = DIVIDE(CALCULATE(COUNT('Churn-Dataset'[TechSupport]), 'Churn-Dataset'[TechSupport] = "Yes", 'Churn-Dataset'[Churn] = "Yes"), CALCULATE(COUNT('Churn-Dataset'[TechSupport]), 'Churn-Dataset'[Churn] = "Yes"), 0)
 ```
 
 
-3. Data Visualizations: Cards, Bar, Pie and Donut Charts was used to visually plot out the subscription service rates,  customer account and demographic information, among other summarized data.
+  * Data Visualizations: Cards, Bar, Pie and Donut Charts was used to visually plot out the subscription service rates,  customer account and demographic information, among other summarized data.
 
-- **GitHUb:** For,
+3. **GitHUb:** For,
    - Portfolio Building
    - Communication
 
@@ -299,11 +298,11 @@ Total PaperlessBilling = CALCULATE(COUNTA('Churn-Dataset'[PaperlessBilling]), 'C
    * 35.79% have partners.
 
 2. **Recommendations:**
-     * Make subscription services more accessible and inclusive for the geriatrics.
-     * Create marketing and sales strategy that improves subscription rate to at least 60% across all services. Only Phone and Internet Services seem to have excellent rates.
-     * Take customer survey to find out customer satisfaction with services provided and suggestions for improvement.
-     * Conduct a deep research to discover why customer subscription drops after the first year period. This might have to do with the 'free-trial' offered.
-     * Ensure seamless electronic billing services as the majority of customers prefer paperless billing.
+   - Make subscription services more accessible and inclusive for the senior citizens.
+   - Create a marketing and sales strategy that improves subscription rate to at least 60% across all services. Only Phone and Internet Services seem to have excellent rates.
+   - Take customer survey on customer satisfaction with services provided and suggestions for improvement.
+   - Conduct a deep research to discover why customer subscription drops after the first year period. This might have to do with the 'free-trial' offered.
+   - Ensure seamless electronic billing services as the more customers prefer paperless billing.
 
 
 ### Visualizations
