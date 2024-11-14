@@ -13,7 +13,7 @@ This data analysis and customer retention report was created for the Pricewaterh
 
 ### Overview
 ---
-This project aims to analyze and report the churn data for a PhoneNow, to identify key metrics and trends. The goal is to understand customer demography, track account information, identify key trends in subscription services, and visually communicate these in a manner that best helps customer retention at PhoneNow.
+This project was built to analyze and report on the churn data of PhoneNow, a telecommunications company concerned about its customer retention rates. The major goal was to identify key metrics and trends that help understand customer demography, track account information, and identify key trends in subscription services. Additionally, the findings of the data was visually communicated in a manner that best informed the Retentions Manager at PhoneNow.
 
 
 ### Dataset
