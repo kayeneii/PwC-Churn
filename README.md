@@ -7,6 +7,7 @@ This data analysis and customer retention report was created for the Pricewaterh
 [Methods](#methods)
 [Findings and Recommendations](#findings-and-recommendations)
 [Visualizations](#visualizations)
+[Conclusion](#conclusion)
 
 ## Customer Demography and Churn Metrics for PhoneNow 
 
@@ -308,3 +309,9 @@ Total PaperlessBilling = CALCULATE(COUNTA('Churn-Dataset'[PaperlessBilling]), 'C
 ### Visualizations
 ---
 ![Visual](https://github.com/kayeneii/Churn/blob/main/PWC_Churn-Metrics_1.png)
+
+### Conclusion
+---
+You made it to the end of the customer churn analysis.🥳
+Until my next report, you may find me [here.](https://www.linkedin.com/in/kayeneii/) I look forward to hearing from you.😄
+
