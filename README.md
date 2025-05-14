@@ -266,7 +266,7 @@ Total PaperlessBilling = CALCULATE(COUNTA('Churn-Dataset'[PaperlessBilling]), 'C
 
    * Data Visualizations: Cards, Bar, Pie and Donut Charts was used to visually plot out the subscription service rates,  customer account and demographic information, among other summarized data.
 
-3. **GitHUb:** For,
+3. **GitHub:** For,
    - Portfolio Building
    - Communication
 
